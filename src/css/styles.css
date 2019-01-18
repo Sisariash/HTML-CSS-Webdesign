@@ -1,0 +1,282 @@
+/* === FARBEN ===  */
+
+
+/*
+Blau:           #1F4E8C
+Dungel Grau:    #3D3F45
+Hell Grau:      #E5E5E5
+Rot:            #A62C21
+
+*/
+
+
+/* === GLOBAL ===  */
+body {
+  margin: 0;
+  font-family: 'Raleway', 'Lato', 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* === GENERELLES ===  */
+
+/* Kann nicht mehr geändert werden wenn wir wo
+anders active verwenden und anders haben wollen
+wegen !important*/
+.active {
+  background-color: #A62C21 !important;
+}
+
+.clearfix::after{
+  display: "";
+  display: block;
+  clear: both;
+}
+
+/* === NAVIGATIONLEISTE === */
+
+.header-nav {
+  width: 100%;
+  height: 50px;
+  background-color: #3D3F45;
+  position: relative;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.header-nav a > img {
+  height: 30px;
+  width: auto;
+  float:left;
+  margin: .55rem;
+}
+
+.header-nav ul {
+  margin: 0;
+  padding: 0;
+  float: right;
+  height: 100%;
+}
+
+.header-nav ul > li {
+  display: inline-block;
+  height: 100%;
+  padding: 0 0.4rem 0 0.4rem;
+}
+
+.header-nav ul > li > a {
+  margin-top: 0.8rem;
+  display: inline-block;
+}
+
+.header-nav ul > li > a:link{
+  color: #FFF;
+  text-decoration: none;
+}
+
+.header-nav ul > li > a:hover{
+  color: #E5E5E5;
+  text-decoration: none;
+}
+
+.header-nav ul > li > a:active{
+  color: #E5E5E5;
+  text-decoration: none;
+}
+
+.header-nav ul > li > a:visited{
+  color: #FFF;
+  text-decoration: none;
+}
+
+.header-nav .col-6 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.header-nav .container,
+.header-nav .row,
+.header-nav .col-6 {
+  height: 100%;
+}
+
+/* === NAVIGATIONLEISTE (MOBILE) === */
+
+.mobile-nav-button {
+  color: #FFF;
+  float: right;
+  font-size: 2rem;
+  border: 2px solid #FFF;
+  width: 37px;
+  height: 37px;
+  position: relative;
+  margin-top: .4rem;
+  margin-bottom: 8px;
+}
+
+.mobile-nav-button > span {
+  position: absolute;
+  bottom: -2px;
+  left: 7px;
+}
+
+.mobile-nav-content > ul > li {
+display: block;
+background-color: #3D3F45;
+height: 50px;
+padding: 0 1.2rem;
+text-align: center;
+}
+
+.mobile-nav-dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+}
+
+.mobile-nav-content {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  display: none;
+}
+
+/* Hovern um dropdown zu sehen  */
+.mobile-nav-dropdown:hover > .mobile-nav-content {
+  display: block;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav{
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+
+}
+
+/* === HEADER-BANNER === */
+
+.header-banner {
+  background: url("../img/hintergrund.jpg") no-repeat;
+  width: 100%;
+  height: 0;
+  padding-top: 20.83%;
+  background-size: contain;
+
+  /*
+1920px * 400px
+
+1000px * ???? (203.3px)
+
+Wiel % von 1920px sind 400px?
+
+400 / 1920 * 100 = 20.83%
+
+  */
+}
+
+.header-banner-klein {
+  background: url("../img/hintergrund-klein.jpg") no-repeat;
+  width: 100%;
+  height: 0;
+  padding-top: 15.625%;
+  background-size: contain;
+}
+
+
+/* === NEWSLETTER-BEREICH === */
+
+.newsletter-bereich {
+  width: 100%;
+  background-color: #3D3F45
+
+}
+
+/*
+
+=== GRID-SYSTEM (SICHTBARKEIT) ===
+
+.border, .border * {
+  border: 1px solid #91C4FF;
+}
+
+[class*="col-"] {
+  background-color: #BFDDFF;
+}
+
+p {
+  background-color: #91C4FF;
+  padding: 0;
+  margin: 0;
+  color: #FFF;
+  text-align: center;
+}
+
+*/
+
+/* === GRID-SYSTEM === */
+
+.container {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ClearFix Hack  */
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+[class*="col-"] {
+  float: left;
+  min-height: 1px;
+  padding: .8rem;
+
+}
+
+.col-1 { width: 16.666%;   }
+.col-2 { width: 33.333%;    }
+.col-3 { width: 50%;       }
+.col-6 { width: 100%;      }
+
+/* === WICHTIGE BREAKPOINTS ===
+
+320 Pixel (iPhone Hochformat)
+480 Pixel (iPhone Querformat)
+768 Pixel (iPad Hochformat)
+1024 Pixel (iPad Querformat)
+1200 Pixel (Laptop)
+>1200 Pixel (große Endgeräte )
+
+ */
+
+
+@media (max-width: 1024px) {
+  .col-1 { width: 33.333%;  }
+
+ }
+
+ @media (max-width: 768px) {
+   .col-1 { width: 50%;   }
+   .col-2 { width: 100%;  }
+   .col-3 { width: 100%;  }
+  }
+
+  @media (max-width: 480px) {
+    .col-1 { width: 100%;   }
+    .col-2 { width: 100%;  }
+    .col-3 { width: 100%;  }
+   }
